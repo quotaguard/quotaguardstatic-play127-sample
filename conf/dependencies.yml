@@ -3,3 +3,4 @@
 require:
     - play 1.2.7
     - postgresql 9.1-901-1.jdbc4 
+    - commons-codec 1.4

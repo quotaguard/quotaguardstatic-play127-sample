@@ -21,7 +21,7 @@ public class QuotaGuardProxyAuthenticator extends Authenticator{
         host = proxyUrl.getHost();
         port = 1080;    
         auth = new ProxyAuthenticator(user,password);
-        setProxy();
+    //    setProxy();
       } catch (MalformedURLException e) {
         e.printStackTrace();
       }     
@@ -38,7 +38,13 @@ public class QuotaGuardProxyAuthenticator extends Authenticator{
       System.setProperty("java.net.socks.username", user);
       System.setProperty("java.net.socks.password", password);
     }
-    
+   
+    public String getEncodedAuth(){
+      //If not using Java8 you will have to use another Base64 encoded, e.g. apache commons codec.
+      String encoded = org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString((user + ":" + password).getBytes());      
+      return encoded;
+    }
+
     public ProxyAuthenticator getAuth(){
       return auth;
     }
