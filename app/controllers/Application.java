@@ -19,7 +19,7 @@ public class Application extends Controller {
    try{
       //STEP 2: Register JDBC driver
       Class.forName("org.postgresql.Driver");
-      String DB_URL="jdbc:postgresql://ec2-54-235-245-180.compute-1.amazonaws.com:5432/d50vt48u98fijd?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+      String DB_URL="jdbc:postgresql://54.235.245.180:5432/d50vt48u98fijd?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 	  String USER = "lvrdcwczyzpzjb";
 	  String PASS="y1dkkfMg9WP2GA9z1a3GFLSvB9";
       //STEP 3: Open a connection
